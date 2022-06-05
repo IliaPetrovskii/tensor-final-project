@@ -2,15 +2,15 @@ package com.example.diplomproject.ui.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.diplomproject.Movie
+import com.example.diplomproject.KpApplication
+import com.example.diplomproject.data.database.MovieEntity
 
 class HomeViewModel : ViewModel() {
 
-    val movies = MutableLiveData(Movie.getMockMovies())
+    var movies: MutableLiveData<List<MovieEntity>> =
+        MutableLiveData(KpApplication.database.movieDao().getAlphabetizedMovieList())
 
-    fun deleteMovie(position: Int){
-        movies.value = movies.value?.toMutableList()?.apply {
-            removeAt(position)
-        }
+    fun deleteMovie(movie: MovieEntity) {
+        KpApplication.database.movieDao().delete(movie)
     }
 }

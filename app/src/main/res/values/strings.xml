@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">diplomProject</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Test1</string>
-    <string name="title_notifications">Test2</string>
+    <string name="title_search">Search</string>
     <string name="poster_of_movie">poster of movie</string>
+    <string name="no_data">No data</string>
 </resources>
